@@ -31,9 +31,139 @@ jobs:
           command: |
             cd packages/smart-contracts/
             ./soliumrc.sh
-            
+
+  test-request-client:
+    docker:
+      - *node_image
+    working_directory: *working_directory
+    steps:
+      - checkout
+      - run:
+          name: 'Build request-client.js'
+          command: sh scripts/collect.sh
+      - run:
+          name: 'Deploy test contracts from smart-contracts'
+          command: |
+            cd packages/smart-contracts/
+            ./soliumrc.sh
+
+  test-data-access:
+    docker:
+      - *node_image
+    working_directory: *working_directory
+    steps:
+      - checkout
+      - run:
+          name: 'Test data-access'
+          command: sh scripts/collect.sh
+      - run:
+          name: 'Deploy data-access'
+          command: |
+            cd packages/smart-contracts/
+            ./soliumrc.sh
+
+  test-data-format:
+    docker:
+      - *node_image
+    working_directory: *working_directory
+    steps:
+      - checkout
+      - run:
+          name: 'Build data-format'
+          command: sh scripts/collect.sh
+      - run:
+          name: 'Test data-format'
+          command: |
+            cd packages/smart-contracts/
+            ./soliumrc.sh
+
+  test-transaction-manager:
+    docker:
+      - *node_image
+    working_directory: *working_directory
+    steps:
+      - checkout
+      - run:
+          name: 'Build transaction-manager'
+          command: sh scripts/collect.sh
+      - run:
+          name: 'Test transaction-manager'
+          command: |
+            cd packages/smart-contracts/
+            ./soliumrc.sh
+      
+  test-ethereum-storage:
+    docker:
+      - *node_image
+    working_directory: *working_directory
+    steps:
+      - checkout
+      - run:
+          name: 'Build ethereum-storage'
+          command: sh scripts/collect.sh
+      - run:
+          name: 'Deploy contracs smart-contracts'
+          command: |
+            cd packages/smart-contracts/
+            ./soliumrc.sh
+
+  test-smart-contracts:
+    docker:
+      - *node_image 
+    working_directory: *working_directory
+    steps:
+      - checkout
+      - run:
+          name: 'Deploy contracs smart-contracts'
+          command: sh scripts/collect.sh
+      - run:
+          name: 'Lint smart contracts smart-contracts'
+          command: |
+            cd packages/smart-contracts/
+            ./soliumrc.sh
+
+  test-request-logic:
+    docker:
+      - *node_image
+    working_directory: *working_directory
+    steps:
+      - checkout
+      - run:
+          name: 'Build request-logic'
+          command: sh scripts/collect.sh
+      - run:
+          name: 'Test request-logic'
+          command: |
+            cd packages/smart-contracts/
+            ./soliumrc.sh
+
 workflows:
   version: 2
   build-and-test:
     jobs:
       - lint-package-json
+      - test-request-client 
+      - test-transaction-manager 
+      - test-data-access 
+      - test-data-format 
+      - test-ethereum-storage 
+      - test-smart-contracts 
+      - test-request-logic 
+
+  hourly:
+    triggers:
+      - schedule:
+          cron: '0,5,10,15,20,25,30,35,40,45,50,55 * * * *'
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - lint-package-json
+      - test-request-client 
+      - test-transaction-manager 
+      - test-data-access 
+      - test-data-format 
+      - test-ethereum-storage 
+      - test-smart-contracts 
+      - test-request-logic 
