@@ -31,3 +31,9 @@ jobs:
           command: |
             cd packages/smart-contracts/
             ./soliumrc.sh
+            
+workflows:
+  version: 2
+  build-and-test:
+    jobs:
+      - lint-package-json
