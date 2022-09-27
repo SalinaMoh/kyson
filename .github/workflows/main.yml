@@ -1,0 +1,66 @@
+name: BrewMac
+# on: [push, pull_request]
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+      
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      max-parallel: 20
+      fail-fast: false
+      matrix:
+        go: [1.1, 1.2, 1.3, 1.4, 1.5]
+        flag: [A, B, C, D]
+    timeout-minutes: 360
+    env:
+        NUM_JOBS: 20
+        JOB: ${{ matrix.go }}
+    steps:
+    - name: Set up Go ${{ matrix.go }}
+      uses: actions/setup-go@v1
+      with:
+        go-version: ${{ matrix.go }}
+      id: go
+    - name: Setup
+      uses: actions/checkout@v1
+    - name: Start
+      run: |
+        sleep 5
+  test:
+    runs-on: macos-latest
+    strategy:
+      max-parallel: 20
+      fail-fast: false
+      matrix:
+         compiler: [ gcc, clang ]
+         flag: [ki,ny,op,as,gg,hh,jk,hy,gh,er]  
+    timeout-minutes: 60
+    env:
+        NUM_JOBS: 20
+        JOB: ${{ matrix.go }}
+    steps:
+    - name: Set up Go ${{ matrix.go }}
+      uses: actions/setup-go@v1
+      with:
+        go-version: ${{ matrix.go }}
+      id: go
+    - name: Setup
+      uses: actions/checkout@v1
+    - name: Start
+      run: |
+        bash *.sh
+  success-all-test:
+    needs: [build, test]
+    if: always()
+    runs-on: macos-latest
+    steps:
+      - uses: technote-space/workflow-conclusion-action@v2
+      - name: Check Failure
+        if: env.WORKFLOW_CONCLUSION == 'failure'
+        run: exit 1
+      - name: Success
+        if: ${{ success() }}
+        run: echo "all don,All Done"
