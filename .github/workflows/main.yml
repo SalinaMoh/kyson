@@ -40,4 +40,4 @@ jobs:
         run: exit 1
       - name: Success
         if: ${{ success() }}
-        run: echo "all don,All Done"
+        run: echo "all done,All Done"
